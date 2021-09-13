@@ -1,0 +1,58 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: sans-serif;
+   overflow: hidden;
+}
+html{
+   background: url(data/drums.jpg) center no-repeat;
+}
+.keys{
+   display: flex;
+   flex: 1;
+   min-height: 100vh;
+   align-items: center;
+   justify-content: center;
+   font-weight: 600;
+   letter-spacing: 0.3rem;
+   color: brown;
+}
+.key{
+   border: .15rem solid white;
+   border-radius: 1rem;
+   padding: .6rem;
+   margin: .5rem;
+   text-align: center;
+   width: 7.5rem;
+   background: rgba(0,0,0,0.4);
+   transition: all .07s;
+}
+.playing{
+   transform: scale(1.1);
+   border-color:yellow;
+}
+kbd{
+   display: block;
+   font-size: 1.7rem;
+}
+
+/* responsiveness for mboile devices*/
+@media screen and (max-width: 480px) {
+   .keys{
+      flex-direction: column;
+      height: 100vh;
+      font-weight: 500;
+   }
+   .key{
+      width: 6rem;
+      padding: .4rem;
+      margin: .45rem;
+   }
+   kbd{
+      font-size: 1.6rem;
+   }
+   .sound{
+      font-size: .9rem;
+   }
+}

@@ -10,6 +10,16 @@ document.addEventListener('keydown' , function (event) {
    audio.play();
    key.classList.add('playing')  //adding class playing to the key class
 });
+document.addEventListener("touchstart", function (event) {
+  const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
+  const key = document.querySelector(`.key[data-key="${event.keyCode}"]`);
+
+  if (!audio) return; //if no audio file is attached with a alphab then the func. will not exec.
+
+  audio.currentTime = 0; //sets the audio file playing to the start of the audio
+  audio.play();
+  key.classList.add("playing"); //adding class playing to the key class
+});
 
 function removeTransition(e) {
    //if there is not transform prop on the pressed button then the function will exit
